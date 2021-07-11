@@ -1,8 +1,14 @@
-package film
+package models
 
 type Film struct {
-	localName string
-	originalName string
-	descriptionLink string
-	imageLink string
+	LocalTitle string
+	OriginalTitle string
+	DescriptionLink string
+	ImageLink string
+}
+
+type TorrentFilm struct {
+	TorrentTitle string
+	TorrentFileLink string
+	
 }

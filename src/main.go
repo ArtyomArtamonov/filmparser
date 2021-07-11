@@ -1,7 +1,17 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+
+	"github.com/ArtyomArtamonov/filmparser/src/scrapper"
+)
+
 
 func main() {
-	fmt.Println("Hello, world!")
+	// Scrapping
+	films := scrapper.GetFilms()
+	// Searching
+	
+
+	// Downloading
 }
