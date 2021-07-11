@@ -8,7 +8,8 @@ type Film struct {
 }
 
 type TorrentFilm struct {
-	TorrentTitle string
-	TorrentFileLink string
-	
+	Title string
+	DescriptionLink string
+	Seeders int
+	Size string
 }
