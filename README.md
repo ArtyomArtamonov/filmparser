@@ -7,9 +7,9 @@ Every time I want to watch a film, I have to go to baskino.me to check if it is 
 ## Usage
 
 Installation process is simple
+Download binary file
+Only Windows supported
 ```bash
-git clone https://github.com/ArtyomArtamonov/filmparser.git
-cd bin
 .\filmparser.exe
 ```
 
