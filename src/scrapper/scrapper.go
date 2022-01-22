@@ -22,6 +22,7 @@ func GetFilms() []*models.Film {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 	films := make([]*models.Film, 0)
 	doc.Find(".shortpost").Each(func(i int, s *goquery.Selection){
 		film := models.Film{
@@ -44,7 +45,7 @@ func GetPage(url string) (*http.Response, error) {
 	if err != nil {
 		return nil, err
 	}
-	if res.StatusCode != 200 {
+	if res.StatusCode != http.StatusOK {
 		return nil, errors.New("status code error: " + string(res.StatusCode) + string(res.Status))
 	}
 	return res, nil
@@ -63,7 +64,6 @@ func getOriginalTitle(film *models.Film) string {
 	}
 
 	var originalTitle string
-
 	doc.Find("td").Each(func(i int, s *goquery.Selection){
 		if s.AttrOr("itemprop", "") == "alternativeHeadline" {
 			originalTitle = s.Text()
