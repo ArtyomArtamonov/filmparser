@@ -2,6 +2,7 @@ package scrapper
 
 import (
 	"errors"
+	"fmt"
 	"log"
 	"net/http"
 
@@ -46,7 +47,7 @@ func GetPage(url string) (*http.Response, error) {
 		return nil, err
 	}
 	if res.StatusCode != http.StatusOK {
-		return nil, errors.New("status code error: " + string(res.StatusCode) + string(res.Status))
+		return nil, errors.New("status code error: " + fmt.Sprint(res.StatusCode) + string(res.Status))
 	}
 	return res, nil
 }

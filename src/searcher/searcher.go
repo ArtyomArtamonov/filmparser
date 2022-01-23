@@ -37,7 +37,7 @@ func SearchFor(film *models.Film) []*models.TorrentFilm {
 				if indextd == 1 {
 					torrentFilm.Title = tablecell.Find(".detLink").Text()
 					torrentFilm.DescriptionLink = tablecell.Find(".detLink").AttrOr("href", "ERROR")
-					// TODO: add size
+					// TODO: add torrent size here
 				}else if indextd == 2 {
 					torrentFilm.Seeders, _ = strconv.Atoi(tablecell.Text())
 				}
